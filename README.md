@@ -2,12 +2,16 @@
 The WeChat public account based on flask is developed and deployed on the Raspberry Pi to realize hardware control and information collection.
 
 ### 介绍
-基于flask的微信公众号接口开发，部署在树莓派上完成设备控制以及信息采集。
+简单搞了一下树莓派基于flask的微信公众号接口开发，部署在树莓派上完成设备控制以及信息采集。
 
 ### 软件架构
 采用flask框架，可以运行在任意python环境下，但部分硬件设备的控制和数据的采集真对树莓派开发
 
 ### 运行效果
+![硬件连接原理图](https://github.com/wangxu2016/Wechat-public-account-on-Raspberry-Pi/blob/master/others/img/Device_connection.png)
+![硬件正面连接图](https://github.com/wangxu2016/Wechat-public-account-on-Raspberry-Pi/blob/master/others/img/RPi1.png)
+![硬件侧面连接图](https://github.com/wangxu2016/Wechat-public-account-on-Raspberry-Pi/blob/master/others/img/RPi2.png)
+![微信公众号效果图](https://github.com/wangxu2016/Wechat-public-account-on-Raspberry-Pi/blob/master/others/img/wecaht.png)
 
 ### 安装教程
 下载代码：
@@ -64,4 +68,3 @@ gunicorn -w 5 -b 0.0.0.0:8102 --threads 6 manage:app
 celery -A tasks worker --loglevel=info
 ```
 可以前面加`nohup`放到后台执行，也可以使用`screen`或者`tmux`放到后台执行，更高级一些可以使用`flower`监控，真对这个完全没有这个必要。
-
